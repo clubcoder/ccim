@@ -46,7 +46,7 @@ function r() { // random
 }
 function slide(){
     $('.global-header')
-    .css('background-image','url("'+ '/backgrounds/' + r() + 1) + '.jpg' +'")')
+    .css('background-image','url("'+ '/backgrounds/' + r() + 1 + '.jpg' +'")')
     .fadeIn(300,function(){
         setTimeout(slide,300);
     });
