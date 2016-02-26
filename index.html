@@ -5,7 +5,13 @@
     #message {
     height:60%;
     overflow:scroll;
-}</style>
+    	
+
+body {
+background-image: url("/backgrounds/28.jpg");
+background-size: cover;
+}
+</style>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
   <body>
@@ -33,7 +39,18 @@
         </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-        <script>
+         <script>
+slide();
+
+function slide(){
+    $('.global-header')
+    .css('background-image','url("'+ '/backgrounds/' + Math.floor((Math.random() * 49) + 1); + '.jpg' +'")')
+    .fadeIn(300,function(){
+        setTimeout(slide,300);
+    });
+}
+</script>
+<script>
               var fb = new Firebase("https://ccim.firebaseio.com/");
 
             var doc = jQuery(document);
