@@ -6,20 +6,54 @@
     <div class="container">
     <div class="col-lg-12">
       <h1>Welcome to Club Coder Instant Messenger</h1>
- <div id="messages"><p>loading...</p></div>
-<input class="form-control" placeholder="Your message" id="input">
+ <div id="messages"></div>
+<input class="form-control" placeholder="Your message" id="text">
+<button class="btn btn-success form-control">Enter</button>
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
 <script>
-var fb = new Firebase("https://clubcim.firebaseio.com");
-fb.on("child_added", function(d){
-  $("#messages").append("<p>" + d.val() + "</p>");
-})
+
 $(document).ready(function(){
     $('#messages').scrollTop($('#messages')[0].scrollHeight)
-});</script>
+});
+
+              var fb = new Firebase("https://clubcim.firebaseio.com/");
+
+            var doc = jQuery(document);
+            doc.ready(setup);
+
+            function setup() {
+                var button;
+                button = jQuery("#submit");
+                button.click(send);
+                fb.on("child_added", received);
+            }
+            function received(message) {
+                var head ;
+                head = jQuery("#message");
+                head.append("<p>" + message.val() + "</p>");
+            }
+
+            function send() {
+                var id = /* fb.getAuth().google.email */ "Test";
+                var input ;
+                input = jQuery("#text");
+                var message = input.val();
+                var year = new Date();
+                var month = new Date();
+                var day = new Date();
+                var hour = new Date();
+                var minute = new Date();
+                var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + hour.getHours() + ":" + minute.getMinutes() + " ";
+                var topush = fulltime + id + message;
+                fb.push(topush);
+                $('#text').val('');
+            }
+
+        
+        </script>
   </body>
 </html>
