@@ -48,7 +48,7 @@
             function received(message) {
                 var head ;
                 head = jQuery("#message");
-                head.prepend("<p>" + message.val() + "</p>");
+                head.append("<p>" + message.val() + "</p>");
             }
 
             function send() {
