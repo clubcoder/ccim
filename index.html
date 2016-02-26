@@ -35,9 +35,11 @@ console.log('2')
                 var head ;
                 head = jQuery("#message");
                 head.append("<p>" + message.val() + "</p>");
+                console.log('5')
             }
 
             function send() {
+              console.log('6')
                 var id = /* fb.getAuth().google.email */ "Test";
                 var input ;
                 input = jQuery("#text");
@@ -48,9 +50,11 @@ console.log('2')
                 var hour = new Date();
                 var minute = new Date();
                 var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + hour.getHours() + ":" + minute.getMinutes() + " ";
+                console.log('7')
                 var topush = fulltime + id + message;
                 fb.push(topush);
                 $('#text').val('');
+                console.log('8')
             }
 
         
