@@ -19,15 +19,17 @@
 
 
               var fb = new Firebase("https://clubcim.firebaseio.com/");
-
+console.log('1')
             var doc = jQuery(document);
             doc.ready(setup);
-
+console.log('2')
             function setup() {
                 var button;
                 button = jQuery("#submit");
                 button.click(send);
+                console.log('3')
                 fb.on("child_added", received);
+                console.log('4')
             }
             function received(message) {
                 var head ;
