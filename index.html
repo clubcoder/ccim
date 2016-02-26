@@ -41,10 +41,12 @@ background-size: cover;
 
          <script>
 slide();
-
+function r() { // random
+    return Math.floor((Math.random() * 49);
+}
 function slide(){
     $('.global-header')
-    .css('background-image','url("'+ '/backgrounds/' + Math.floor((Math.random() * 49) + 1); + '.jpg' +'")')
+    .css('background-image','url("'+ '/backgrounds/' + r() + 1) + '.jpg' +'")')
     .fadeIn(300,function(){
         setTimeout(slide,300);
     });
@@ -55,6 +57,7 @@ function slide(){
 
             var doc = jQuery(document);
             doc.ready(setup);
+
 
             function setup() {
               $('#message').scrollTop($('#message')[0].scrollHeight)
