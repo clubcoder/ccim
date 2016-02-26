@@ -15,7 +15,7 @@
 
 <script>
 var fb = new Firebase("https://clubcim.firebaseio.com");
-fb.on("value", function(d){
+fb.on("child_added", function(d){
   $("#messages").append("<p>" + d.val() + "</p>");
 })
 $(document).ready(function(){
