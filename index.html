@@ -6,12 +6,32 @@
     height:60%;
     overflow:scroll;
     	
-
 body {
 background-image: url("backgrounds/28.jpg");
 }
 </style>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+    #message {
+    	.margin-bottom:;
+		-moz-box-shadow:    inset  0  8px 4px -8px #696868, 
+                        	inset  0 -8px 4px -8px #696868;
+	    -webkit-box-shadow: inset  0  8px 4px -8px #696868, 
+	                        inset  0 -8px 4px -8px #696868;
+	     box-shadow:        inset  0  8px 4px -8px #696868, 
+	                        inset  0 -8px 4px -8px #696868;
+
+	}
+	#message:hover {
+		-moz-box-shadow:    inset  0  8px 14px -8px #696868, 
+                        	inset  0 -8px 14px -8px #696868;
+	    -webkit-box-shadow: inset  0  8px 14px -8px #696868, 
+	                        inset  0 -8px 14px -8px #696868;
+	     box-shadow:        inset  0  8px 14px -8px #696868, 
+	                        inset  0 -8px 14px -8px #696868;
+	}
+	
+</style>
   </head>
   <body>
     <div class="container">
@@ -23,7 +43,8 @@ background-image: url("backgrounds/28.jpg");
                     <br>
                     <h1>Welcome to the Club Coder instant messenger</h1>
                     <br>
-                    <div id="message"></div>
+                    <div id="message" class="col-lg-12"></div>
+                    <br>
                     <br>
                     <input type="text" placeholder="type a message!" id="text" class="form-control">
                     <br>
@@ -41,11 +62,11 @@ background-image: url("backgrounds/28.jpg");
          <script>
 slide();
 function r() { // random
-    return Math.floor(Math.random() * 49);
+    return Math.floor(Math.random() * 49 + 1);
 }
 function slide(){
     $('.global-header')
-    .css('background-image','url("'+ '/backgrounds/' + r() + 1 + '.jpg' +'")')
+    .css('background-image','url("'+ 'http://im.clubcoder.tk/backgrounds/' + r() + '.jpg' +'")')
     .fadeIn(300,function(){
         setTimeout(slide,300);
     });
@@ -53,14 +74,10 @@ function slide(){
 </script>
 <script>
               var fb = new Firebase("https://ccim.firebaseio.com/");
-
             var doc = jQuery(document);
             doc.ready(setup);
-
-
             function setup() {
               $('#message').scrollTop($('#message')[0].scrollHeight)
-
                 var button;
                 button = jQuery("#submit");
                 button.click(send);
@@ -72,7 +89,6 @@ function slide(){
                 head = jQuery("#message");
                 head.append("<p>" + message.val() + "</p>");
             }
-
             function send() {
                 var id = "Ian:"
                 var input ;
@@ -88,7 +104,6 @@ function slide(){
                 fb.push(topush);
                 $('#text').val('');
             }
-
         </script>
                 </div>
             </div>
@@ -99,4 +114,3 @@ function slide(){
   </body>
   
 </html>
-
