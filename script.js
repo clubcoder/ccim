@@ -31,7 +31,7 @@ function z() {
 				var day = new Date();
 				var hour = new Date();
 				var minute = new Date();
-				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + hour.getHours() + ":" + minute.getMinutes() + " ";
+				return month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + hour.getHours() + ":" + minute.getMinutes() + " ";
 			}
 			function setup() {
 				$('#message').scrollTop($('#message')[0].scrollHeight)
@@ -48,7 +48,7 @@ function z() {
 				z()
 			}
 			function send() {
-				var id = "Ian:"
+				var id = "Ian:";
 				var input;
 				input = jQuery("#text");
 				var message = input.val();

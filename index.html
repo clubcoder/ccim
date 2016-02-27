@@ -1,48 +1,6 @@
 
 <html>
 <head>
-	<style>
-	#message {
-
-		height:55%;
-		overflow:scroll;
-	}
-	body {
-		background-image: url("backgrounds/28.jpg");
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center; 
-
-	}
-	#message {
-		.margin-bottom:;
-		-moz-box-shadow:    inset  0  8px 4px -8px #696868, 
-		inset  0 -8px 4px -8px #696868;
-		-webkit-box-shadow: inset  0  8px 4px -8px #696868, 
-		inset  0 -8px 4px -8px #696868;
-		box-shadow:        inset  0  8px 4px -8px #696868, 
-		inset  0 -8px 4px -8px #696868;
-
-	}
-	#message:hover {
-		-moz-box-shadow:    inset  0  8px 14px -8px #696868, 
-		inset  0 -8px 14px -8px #696868;
-		-webkit-box-shadow: inset  0  8px 14px -8px #696868, 
-		inset  0 -8px 14px -8px #696868;
-		box-shadow:        inset  0  8px 14px -8px #696868, 
-		inset  0 -8px 14px -8px #696868;
-	}
-	#message {
-		background:rgba(255,255,255,0.5);
-		border-radius: 2px
-	}
-	.intro {
-		background:rgba(255,255,255,0.1);
-	}
-	#text {
-		background:rgba(255,255,255,0.5)
-	}
-	</style>
 	<link href="style.min.css">
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -73,71 +31,9 @@
 					</script>
 					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-					<script src="script.min.js"></script>
+					<script src="script.js"></script>
 			<script>
-			function z() {
-				var lockedToBottom = true;
-			    var tdiv = $("#textb");
-			    tdiv.on('scroll', function() {
-			        if (tdiv.prop('scrollHeight') - tdiv.prop('clientHeight') - tdiv.scrollTop() === 0)
-			            lockedToBottom = true;
-			        else
-			            lockedToBottom = false;
-			    });
-    		if (lockedToBottom) {
-        	    tdiv.scrollTop(tdiv.prop('scrollHeight'));
-        	}
-        }
-					slide();
-			function r() { // random
-				return Math.floor(Math.random() * 49 + 1);
-			}
-			function slide(){
-				$('body')
-				.css('background-image','url("'+ 'http://im.clubcoder.tk/backgrounds/' + r() + '.jpg' +'")')
-				.fadeIn(300000,function(){
-					setTimeout(slide,300000);
-				});
-			}
-			var fb = new Firebase("https://ccim2.firebaseio.com/");
-			var doc = jQuery(document);
-			doc.ready(setup);
-			function fulltime() {
-				var year = new Date();
-				var month = new Date();
-				var day = new Date();
-				var hour = new Date();
-				var minute = new Date();
-				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + hour.getHours() + ":" + minute.getMinutes() + " ";
-			}
-			function setup() {
-				$('#message').scrollTop($('#message')[0].scrollHeight)
-				var button;
-				button = jQuery("#submit");
-				button.click(send);
-				fb.on("child_added", received);
-
-			}
-			function received(message) {
-				var head ;
-				head = jQuery("#message");
-				head.append("<p>" + message.val() + "</p>");
-				z()
-			}
-			function send() {
-				var id = "Ian:"
-				var input;
-				input = jQuery("#text");
-				var message = input.val();
-				if (message.indexOf("/") === 0) {
-					runCommand(message);
-				} else {
-					
-					var topush = fulltime() + id + message;
-					fb.push(topush);
-				}
-				$('#text').val('');
-			}
+			
 			</script>
 		</div>
 	</div>
