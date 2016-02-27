@@ -7,9 +7,14 @@ if (window.location.search === "?" || window.location.search === null || window.
 var redirect = getQuery("continue");
 var username = getQuery("username");
 var key = getQuery("key")
-var email = getQUery("email")
+var email = getQuery("email")
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
 fb.once("value", function(snapshot) {
-  if (snapshot.child(key).val() === username)
+	if (snapshot.child(key).val() === username) {
+		localStorage.setItem("username", username);
+		localStorage.setItem("auth", key);
+		localStorage.setItem("email", email);
+		window.location.href = redirect;
+	}
 });
 </script>
