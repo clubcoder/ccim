@@ -13,7 +13,7 @@ console.log(2)
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
 fb.on("value", function(snapshot) {
 	console.log(3)
-	if (snapshot.child(key).val() === username && username !== placeholder && key !== invalidPlaceholder) {
+	if (snapshot.child(key).val() === username && username !== "placeholder" && key !== "invalidPlaceholder") {
 		console.log(true)
 		localStorage.setItem("username", username);
 		localStorage.setItem("auth", key);
