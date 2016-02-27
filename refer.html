@@ -10,11 +10,14 @@ var key = getQuery("key")
 var email = getQuery("email")
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
 fb.once("value", function(snapshot) {
-	if (snapshot.child(key).val() === username) {
+	if (snapshot.child(key).val() === username && username !== placeholder && key !== invalidPlaceholder) {
+		console.log(true)
 		localStorage.setItem("username", username);
 		localStorage.setItem("auth", key);
 		localStorage.setItem("email", email);
 		window.location.href = decodeURIComponent(redirect);
+	} else {
+		console.log(error)
 	}
 });
 
