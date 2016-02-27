@@ -75,15 +75,15 @@
 					<script src="script.min.js"></script>
 			<script>
 			function z() {
-				var lockedToBottom = true;
+				window.lockedToBottom = true;
 			    var tdiv = $("#textb");
 			    tdiv.on('scroll', function() {
 			        if (tdiv.prop('scrollHeight') - tdiv.prop('clientHeight') - tdiv.scrollTop() === 0)
-			            lockedToBottom = true;
+			            window.lockedToBottom = true;
 			        else
-			            lockedToBottom = false;
+			            window.lockedToBottom = false;
 			    });
-    		if (lockedToBottom) {
+    		if (window.lockedToBottom) {
         	    tdiv.scrollTop(tdiv.prop('scrollHeight'));
         	}
         }
@@ -107,13 +107,13 @@
 				var day = new Date();
 				var hour = new Date();
 				var minute = new Date();
-                var h = 9999;
                 if (hour.getHours() > 12 ) {
-                    h = hour.getHours() -12
+                    var h = hour.getHours() -12
                 } else {
-                    h = hour.getHours()
+                    var h = hour.getHours()
                 }
 				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + minute.getMinutes() + " ";
+                return fulltime;
 			}
 			function setup() {
 				$('#message').scrollTop($('#message')[0].scrollHeight)
