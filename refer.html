@@ -11,7 +11,7 @@ var key = getQuery("key")
 var email = getQuery("email")
 console.log(2)
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
-fb.once("value", function(snapshot) {
+fb.on("value", function(snapshot) {
 	console.log(3)
 	if (snapshot.child(key).val() === username && username !== placeholder && key !== invalidPlaceholder) {
 		console.log(true)
