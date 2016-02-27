@@ -1,0 +1,15 @@
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<script>
+function getQuery(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var c=new RegExp("[\\?&]"+e+"=([^&#]*)"),n=c.exec(location.search);return null===n?"":decodeURIComponent(n[1].replace(/\+/g," "))}
+if (window.location.search === "?" || window.location.search === null || window.location.search === "") {
+	window.location.href = "404.html"
+}
+var redirect = getQuery("continue");
+var username = getQuery("username");
+var key = getQuery("key")
+var email = getQUery("email")
+var fb = new Firebase("https://ccim2.firebaseio.com/samplechat/users/fred");
+fredRef.once("value", function(snapshot) {
+  // ...
+});
+</script>
