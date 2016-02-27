@@ -107,7 +107,13 @@
 				var day = new Date();
 				var hour = new Date();
 				var minute = new Date();
-				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + (hour.getHours() > 12 ? hour.getHours() -12 : hour.getHours()) + ":" + minute.getMinutes() + " ";
+                var h = 9999;
+                if (hour.getHours() > 12 ) {
+                    h = hour.getHours() -12
+                } else {
+                    h = hour.getHours()
+                }
+				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + minute.getMinutes() + " ";
 			}
 			function setup() {
 				$('#message').scrollTop($('#message')[0].scrollHeight)
