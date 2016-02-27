@@ -1,6 +1,11 @@
 
 <html>
 <head>
+    <script>
+    if (localStorage.getItem("auth") !== "true") {
+        window.location.href = 
+    }
+    </script>
 	<style>
 	#message {
 
@@ -57,7 +62,8 @@
 					<br>
 					<h1 class="intro">Welcome to the Club Coder instant messenger</h1>
 					<br>
-					<div id="message" class="col-lg-12">Loading...</div>
+                    <noscript></noscript>
+					<script> document.write('<div id="message" class="col-lg-12"></div>')</script>
 					<br>
 					<textarea placeholder="type a message!" id="text" class="form-control"> </textarea>
 					<br>
@@ -114,8 +120,12 @@
                     var h = hour.getHours()
                     var a = " P.M."
                 }
-
-				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + minute.getMinutes() + a + " ";
+                if (minute.getMinutes().length === 1) {
+                    var m = "0" + minute.getMinutes();
+                } else {
+                    var m = minute.getMinutes();
+                }
+				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + m + a + " ";
                 return fulltime;
 			}
 			function setup() {
@@ -133,7 +143,7 @@
 				z()
 			}
 			function send() {
-				var id = "Ian:"
+				var id = localStorage.getItem("email")
 				var input;
 				input = jQuery("#text");
 				var message = input.val();
