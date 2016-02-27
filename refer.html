@@ -4,12 +4,15 @@ function getQuery(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var c=new R
 if (window.location.search === "?" || window.location.search === null || window.location.search === "") {
 	window.location.href = "404.html"
 }
+console.log(1)
 var redirect = getQuery("continue");
 var username = getQuery("username");
 var key = getQuery("key")
 var email = getQuery("email")
+console.log(2)
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
 fb.once("value", function(snapshot) {
+	console.log(3)
 	if (snapshot.child(key).val() === username && username !== placeholder && key !== invalidPlaceholder) {
 		console.log(true)
 		localStorage.setItem("username", username);
