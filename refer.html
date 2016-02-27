@@ -14,7 +14,7 @@ fb.once("value", function(snapshot) {
 		localStorage.setItem("username", username);
 		localStorage.setItem("auth", key);
 		localStorage.setItem("email", email);
-		window.location.href = redirect;
+		window.location.href = decodeURIComponent(redirect);
 	}
 });
 
