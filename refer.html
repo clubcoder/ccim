@@ -8,8 +8,8 @@ var redirect = getQuery("continue");
 var username = getQuery("username");
 var key = getQuery("key")
 var email = getQUery("email")
-var fb = new Firebase("https://ccim2.firebaseio.com/samplechat/users/fred");
-fredRef.once("value", function(snapshot) {
-  // ...
+var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
+fb.once("value", function(snapshot) {
+  if (snapshot.child(key).val() === username)
 });
 </script>

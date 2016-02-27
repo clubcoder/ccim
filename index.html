@@ -2,7 +2,7 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-                    </script>
+    </script>
     <script>
     /* 
     if (localStorage.getItem("auth") !== "true") {
@@ -16,19 +16,19 @@
 
     <noscript>
         <meta http-equiv="refresh"
-   content="0; url=http://im.clubcoder.com/noscript.html">
+        content="0; url=http://im.clubcoder.com/noscript.html">
     </noscript>
-	<style>
-	#message {
+    <style>
+    #message {
 
         height:55%;
         overflow:scroll;
     }
     body {
         background-image: url("backgrounds/28.jpg");
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center; 
+        background-size:     cover;                      /* <------ */
+        background-repeat:   no-repeat;
+        background-position: center center; 
 
     }
     #message {
@@ -67,12 +67,10 @@
     .transparent {
         opacity:0.7;
     }
-    .popout-only {
-        display:none;
-    }
-	</style>
+    
+    </style>
 
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 </head>
 <body>
@@ -87,58 +85,54 @@
 					<h1 class="intro">Welcome to the Club Coder instant messenger</h1>
 					<br>
                     <noscript></noscript>
-					<div id="message" class="col-lg-12"></div>
-					<br>
-                    <div class="popout-hidden">
-					<textarea placeholder="type a message!" id="text" class="form-control" class="text-ab45"></textarea>
-                    </div>
-                    <div class="popout-only"><input placeholder="type a message!" type="text" class="form-control" id="popout-input-1924"></div>
-					<br>
-					<button class="form-control btn btn-success transparent" id="submit">Enter</button>
-                    <div class="popout-hidden">
+                    <div id="message" class="col-lg-12"></div>
+                    <br>
+                       <textarea placeholder="type a message!" id="text" class="form-control" class="text-ab45"></textarea>
+                   <br>
+                   <button class="form-control btn btn-success transparent" id="submit">Enter</button>
+                   <div class="popout-hidden">
                     <div class="options background-transparent"><p> <a id="popout">Pop Out <i class="fa fa-external-link"></i></a>
- | <span><a id="view-image">View Image</a></span></p></div>
-                    </div>
+                       | <span><a id="view-image">View Image</a></span></p></div>
+                   </div>
 
-					<footer><div class="container"><div class="col-lg-12 background-transparent"><p>&copy; 2015-2016 Jeffrey Meng All Rights Reserved.</p></div></div></footer>
-					
-					<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js">
-					</script>
-					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                   <footer><div class="container"><div class="col-lg-12 background-transparent"><p>&copy; 2015-2016 Jeffrey Meng All Rights Reserved.</p></div></div></footer>
 
-			<script>
-            if (window.location.hash === "#popout") {
-                $(".popout-hidden").hide()
-                $(".intro").html("CCIM")
-                $("#message").css('height','45%')
-                $(".text-ab45").attr("id", "hidden")
-                $(".popout-input-1924").attr("id", "text")
-                $(".popout-only").css("display", "block")
-            }
-$(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
-					slide();
+                   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js">
+                   </script>
+                   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+                   <script>
+                   if (window.location.hash === "#popout") {
+                    $(".popout-hidden").hide()
+                    $(".intro").html("CCIM")
+                    $("#message").css('height','45%')
+                    $("#text").css("height", "auto")
+
+                }
+                $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
+                slide();
 			function randoms() { // random
 				return Math.floor(Math.random() * 50 + 1);
 			}
-            
+
 			function slide(){
                 var z = randoms()
-				$('body')
-				.css('background-image','url("'+ 'http://im.clubcoder.tk/backgrounds/' + z + '.jpg' +'")')
-				.fadeIn(300000,function(){
-					setTimeout(slide,300000);
-				});
+                $('body')
+                .css('background-image','url("'+ 'http://im.clubcoder.tk/backgrounds/' + z + '.jpg' +'")')
+                .fadeIn(300000,function(){
+                   setTimeout(slide,300000);
+               });
                 $("#view-image").attr("href", 'http://im.clubcoder.tk/backgrounds/' + z + '.jpg')
-			}
-			var fb = new Firebase("https://ccim2.firebaseio.com/messages/");
-			var doc = jQuery(document);
-			doc.ready(setup);
-			function fulltime() {
-				var year = new Date();
-				var month = new Date();
-				var day = new Date();
-				var hour = new Date();
-				var minute = new Date();
+            }
+            var fb = new Firebase("https://ccim2.firebaseio.com/messages/");
+            var doc = jQuery(document);
+            doc.ready(setup);
+            function fulltime() {
+                var year = new Date();
+                var month = new Date();
+                var day = new Date();
+                var hour = new Date();
+                var minute = new Date();
                 if (hour.getHours() > 12 ) {
                     var h = hour.getHours() -12
                     var a = " A.M."
@@ -151,25 +145,25 @@ $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeig
                 } else {
                     var m = minute.getMinutes();
                 }
-				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + m + a + " ";
+                var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + m + a + " ";
                 return fulltime;
-			}
-			function setup() {
-				$('#message').scrollTop($('#message')[0].scrollHeight)
-				var button;
-				button = jQuery("#submit");
-				button.click(s);
+            }
+            function setup() {
+                $('#message').scrollTop($('#message')[0].scrollHeight)
+                var button;
+                button = jQuery("#submit");
+                button.click(s);
                 $("#popout").click(popout);
-				fb.on("child_added", received);
+                fb.on("child_added", received);
 
 
-			}
+            }
             function popout() {
                 var x = window.open('/#popout', 'test', 'status=no,location=no,toolbar=no,menubar=no,width=300,height=500')
             }
-			function received(message) {
-				var head;
-				head = jQuery("#message");
+            function received(message) {
+                var head;
+                head = jQuery("#message");
                 var m = message.val()
                 if (m.indexOf("/") === 0) {
                     console.log("private:" + m)
@@ -190,9 +184,9 @@ $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeig
                     }
                     
                 } else {
-				    head.append("<p>" + m + "</p>");
+                    head.append("<p>" + m + "</p>");
                 }
-			}
+            }
             $(document).keypress(function(e) {
                 if(e.which == 13) {
                     s()
@@ -201,28 +195,28 @@ $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeig
                 }
             });
 
-			function s() {
-				var id = localStorage.getItem("username")
-				var input;
-				input = jQuery("#text");
-				var message = input.val();
-				if (message.indexOf("/") === 0) {
-					runCommand(message);
-                    $('#text').val('');
-				} else if (message === null || message === "" || message === " " || message === "\n") {
-                    return;
-                } else {
-					
-					var topush = fulltime() + id + ": " + message;
-					fb.push(topush);
-                    $('#text').val('');
-				}
-				
+            function s() {
+                var id = localStorage.getItem("username")
+                var input;
+                input = jQuery("#text");
+                var message = input.val();
+                if (message.indexOf("/") === 0) {
+                   runCommand(message);
+                   $('#text').val('');
+               } else if (message === null || message === "" || message === " " || message === "\n") {
+                return;
+            } else {
 
-			}
-			</script>
-		</div>
-	</div>
+               var topush = fulltime() + id + ": " + message;
+               fb.push(topush);
+               $('#text').val('');
+           }
+
+
+       }
+       </script>
+   </div>
+</div>
 </div>
 
 </div>
