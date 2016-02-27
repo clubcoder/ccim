@@ -102,6 +102,14 @@
 			var fb = new Firebase("https://clubcim.firebaseio.com/");
 			var doc = jQuery(document);
 			doc.ready(setup);
+			function fulltime() {
+				var year = new Date();
+				var month = new Date();
+				var day = new Date();
+				var hour = new Date();
+				var minute = new Date();
+				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + hour.getHours() + ":" + minute.getMinutes() + " ";
+			}
 			function setup() {
 				$('#message').scrollTop($('#message')[0].scrollHeight)
 				var button;
@@ -118,17 +126,16 @@
 			}
 			function send() {
 				var id = "Ian:"
-				var input ;
+				var input;
 				input = jQuery("#text");
 				var message = input.val();
-				var year = new Date();
-				var month = new Date();
-				var day = new Date();
-				var hour = new Date();
-				var minute = new Date();
-				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + hour.getHours() + ":" + minute.getMinutes() + " ";
-				var topush = fulltime + id + message;
-				fb.push(topush);
+				if (message.indexOf("/") === 0) {
+					runCommand(message);
+				} else {
+					
+					var topush = fulltime() + id + message;
+					fb.push(topush);
+				}
 				$('#text').val('');
 			}
 			</script>
