@@ -7,7 +7,7 @@ if (window.location.search === "?" || window.location.search === null || window.
 console.log(1)
 var redirect = getQuery("continue");
 var username = getQuery("username");
-var token = getQuery("key")
+var key = getQuery("token")
 var email = getQuery("email")
 console.log(2)
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
