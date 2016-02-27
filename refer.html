@@ -7,8 +7,9 @@ if (window.location.search === "?" || window.location.search === null || window.
 console.log(1)
 var redirect = getQuery("continue");
 var username = getQuery("username");
-var key = getQuery("token")
+var key = getQuery("key")
 var email = getQuery("email")
+var token = getQuery("token")
 console.log(2)
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
 fb.on("value", function(snapshot) {
@@ -16,9 +17,10 @@ fb.on("value", function(snapshot) {
 	if (snapshot.child(key).val() === username && username !== "placeholder" && key !== "invalidPlaceholder") {
 		console.log(true)
 		localStorage.setItem("username", username);
-		localStorage.setItem("auth", key);
+		localStorage.setItem("key", key);
 		localStorage.setItem("email", email);
 		localStorage.setItem("auth", "true")
+		localStorage.setItem("token", token)
 		window.location.href = decodeURIComponent(redirect);
 	} else {
 		console.log(error)
