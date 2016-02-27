@@ -4,12 +4,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
     <script>
-    /* 
-    if (localStorage.getItem("auth") !== "true") {
-        // window.location.href = "/login.html";
+    function testAuth() {
+        var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
+        fbref.once("value", function(snapshot) {
+            if (snapshot.child(key).val() === username) {
+                return true;
+            } else {
+                return false;
+            }
+        });
     }
-    */
-    localStorage.setItem("username", "Jeffrey");
+    if (!testAuth()) {
+        window.location.href = "/login.html";
+    }
+    
 
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -87,30 +95,30 @@
                     <noscript></noscript>
                     <div id="message" class="col-lg-12"></div>
                     <br>
-                       <textarea placeholder="type a message!" id="text" class="form-control" class="text-ab45"></textarea>
-                   <br>
-                   <button class="form-control btn btn-success transparent" id="submit">Enter</button>
-                   <div class="popout-hidden">
-                    <div class="options background-transparent"><p> <a id="popout">Pop Out <i class="fa fa-external-link"></i></a>
-                       | <span><a id="view-image">View Image</a></span></p></div>
-                   </div>
+                    <textarea placeholder="type a message!" id="text" class="form-control" class="text-ab45"></textarea>
+                    <br>
+                    <button class="form-control btn btn-success transparent" id="submit">Enter</button>
+                    <div class="popout-hidden">
+                        <div class="options background-transparent"><p> <a id="popout">Pop Out <i class="fa fa-external-link"></i></a>
+                         | <span><a id="view-image">View Image</a></span></p></div>
+                     </div>
 
-                   <footer><div class="container"><div class="col-lg-12 background-transparent"><p>&copy; 2015-2016 Jeffrey Meng All Rights Reserved.</p></div></div></footer>
+                     <footer><div class="container"><div class="col-lg-12 background-transparent"><p>&copy; 2015-2016 Jeffrey Meng All Rights Reserved.</p></div></div></footer>
 
-                   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js">
-                   </script>
-                   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js">
+                     </script>
+                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-                   <script>
-                   if (window.location.hash === "#popout") {
-                    $(".popout-hidden").hide()
-                    $(".intro").html("CCIM")
-                    $("#message").css('height','45%')
-                    $("#text").css("height", "auto")
+                     <script>
+                     if (window.location.hash === "#popout") {
+                        $(".popout-hidden").hide()
+                        $(".intro").html("CCIM")
+                        $("#message").css('height','45%')
+                        $("#text").css("height", "auto")
 
-                }
-                $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
-                slide();
+                    }
+                    $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
+                    slide();
 			function randoms() { // random
 				return Math.floor(Math.random() * 50 + 1);
 			}
@@ -120,8 +128,8 @@
                 $('body')
                 .css('background-image','url("'+ 'http://im.clubcoder.tk/backgrounds/' + z + '.jpg' +'")')
                 .fadeIn(300000,function(){
-                   setTimeout(slide,300000);
-               });
+                 setTimeout(slide,300000);
+             });
                 $("#view-image").attr("href", 'http://im.clubcoder.tk/backgrounds/' + z + '.jpg')
             }
             var fb = new Firebase("https://ccim2.firebaseio.com/messages/");
@@ -201,21 +209,21 @@
                 input = jQuery("#text");
                 var message = input.val();
                 if (message.indexOf("/") === 0) {
-                   runCommand(message);
-                   $('#text').val('');
-               } else if (message === null || message === "" || message === " " || message === "\n") {
+                 runCommand(message);
+                 $('#text').val('');
+             } else if (message === null || message === "" || message === " " || message === "\n") {
                 return;
             } else {
 
-               var topush = fulltime() + id + ": " + message;
-               fb.push(topush);
-               $('#text').val('');
-           }
+             var topush = fulltime() + id + ": " + message;
+             fb.push(topush);
+             $('#text').val('');
+         }
 
 
-       }
-       </script>
-   </div>
+     }
+     </script>
+ </div>
 </div>
 </div>
 
