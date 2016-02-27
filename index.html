@@ -109,10 +109,13 @@
 				var minute = new Date();
                 if (hour.getHours() > 12 ) {
                     var h = hour.getHours() -12
+                    var a = " A.M."
                 } else {
                     var h = hour.getHours()
+                    var a = " P.M."
                 }
-				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + minute.getMinutes() + " ";
+
+				var fulltime = month.getMonth()+1 + "/" + day.getDate() + "/" + year.getFullYear() + "  " + h + ":" + minute.getMinutes() + a + " ";
                 return fulltime;
 			}
 			function setup() {
