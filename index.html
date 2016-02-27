@@ -6,18 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
     <script>
-    function testAuth() {
-        var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
-        fbref.once("value", function(snapshot) {
-            if (snapshot.child(key).val() === username) {
-                snapshot.child(key).remove()
-                return true;
-            } else {
-                return false;
-            }
-        });
-    }
-    if (!testAuth()) {
+
+    if ( localStorage.getKey("auth") !== "true" ) {
         window.location.href = "/login.html";
     }
     
@@ -26,8 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <noscript>
-        <meta http-equiv="refresh"
-        content="0; url=http://im.clubcoder.com/noscript.html">
+        <meta http-equiv="refresh" content="0; url=http://im.clubcoder.com/noscript.html">
     </noscript>
     <style>
     #message {
