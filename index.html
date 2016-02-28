@@ -223,6 +223,7 @@
                 }
             });
             function runCommand(c) {
+                var id = localStorage.getItem("username")
                 var command = c.substring(c.indexOf("/") + 1, c.indexOf("["))
                 console.log(command)
                 if (command === "msg") {
