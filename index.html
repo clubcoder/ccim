@@ -67,7 +67,7 @@
         inset  0 -8px 14px -8px #696868;
     }
     #message {
-        background:rgba(255,255,255,0.5);
+        background:rgba(255,255,255,0.7);
         border-radius: 2px
     }
     .intro {
@@ -229,7 +229,7 @@
                 if (command === "msg") {
                     var recipents = c.substring(c.indexOf("/msg[") + 5, c.indexOf("]"))
                     var message = c.substring(c.indexOf("] ") + 2)
-                    var topush = "/private/header/" + recipents + "/end/" + fulltime() + id + " to " + recipents.replaceAll(" ", " and ") + ": " + message;
+                    var topush = "/private/header/" + recipents + "/end/" + fulltime() + id + " to " + recipents.replaceAll(" ", " and ").replaceAll(" i", " I").replaceAll(" j", " J").replaceAll(" d", "D").replaceAll(" l", " L") + ": " + message;
                      fb.push(topush);
                      $('#text').val('');
 
