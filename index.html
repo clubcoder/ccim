@@ -9,7 +9,7 @@
     function testAuth() {
         var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
         var key = localStorage.getItem("key");
-                fbref.child(key).remove()
+                fbref.child(key).set(null)
         if (localStorage.getItem("auth") === "true") {
             fbref.authWithCustomToken(localStorage.getItem("token"), function(error, authData) {
               if (error) {
