@@ -224,6 +224,7 @@
             });
             function runCommand(c) {
                 var command = c.substring(c.indexOf("/") + 1, c.indexOf(" "))
+                console.log(command)
                 if (command === "msg") {
                     var recipents = c.substring(c.indexOf("/msg[") + 5, c.indexOf("]"))
                     var message = c.substring(c.indexOf("] ") + 2)
