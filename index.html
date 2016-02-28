@@ -111,7 +111,7 @@
                     <button class="form-control btn btn-success transparent" id="submit">Enter</button>
                     <div class="popout-hidden">
                         <div class="options background-transparent"><p> <a id="popout">Pop Out <i class="fa fa-external-link"></i></a>
-                         | <span><a id="view-image">View Image</a></span></p></div>
+                         | <span><a id="view-image">View Image</a></span> | <a id="logout">Logout</a></p></div>
                      </div>
 
                      <footer><div class="container"><div class="col-lg-12 background-transparent"><p>&copy; 2015-2016 Jeffrey Meng All Rights Reserved.</p></div></div></footer>
@@ -127,6 +127,12 @@
                         $("#text").css("height", "auto")
 
                     }
+
+                    $("#logout").click(function(){
+                        fbref.unauth();
+                        localStorage.setItem("auth", "false");
+                        window.location.href = "/logout.html"
+                    })
                     $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
                     slide();
 			function randoms() { // random
