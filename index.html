@@ -140,7 +140,7 @@
 			function randoms() { // random
 				return Math.floor(Math.random() * 50 + 1);
 			}
-            $("#help").click($("#myModal").modal("open"))
+            $("#help").click(function(){$("#myModal").modal("open")})
 			function slide(){
                 var z = randoms()
                 $('body')
