@@ -110,8 +110,9 @@
                     <div class="popout-hidden">
                         <div class="options background-transparent"><p> <a id="popout">Pop Out <i class="fa fa-external-link"></i></a>
                          | <span><a id="view-image">View Image <i class="fa fa-picture-o"></i>
-</a></span> | <a id="logout">Logout <i class="fa fa-sign-out"></i>
-</a></p></div>
+</a></span> | <a id="logout">Logout <i class="fa fa-sign-out"></i></a> | <a id="help">Help <i class="fa fa-info-circle"></i>
+
+</p></div>
                      </div>
 
                      <footer><div class="container"><div class="col-lg-12 background-transparent"><p>&copy; 2015-2016 Jeffrey Meng All Rights Reserved.</p></div></div></footer>
@@ -139,7 +140,7 @@
 			function randoms() { // random
 				return Math.floor(Math.random() * 50 + 1);
 			}
-
+            $("#help").click($("#myModal").modal("open"))
 			function slide(){
                 var z = randoms()
                 $('body')
@@ -219,7 +220,9 @@
                     e.preventDefualt;
                 }
             });
-
+            function runCommand(c) {
+                var command = c.substring
+            }
             function s() {
                 var id = localStorage.getItem("username")
                 var input;
@@ -245,7 +248,33 @@
 </div>
 
 </div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Help</h4>
+      </div>
+      <div class="modal-body">
+        <p>Type in a message and press enter or click enter to send. Messages cannot be just a space, empty, or start with a slash(If a message starts with a slash, it is a command see below). To create a new line, type in \n note. Markdown is enabled(see below).</p>
+        <h4>Commands</h4>
+        <p>There is currently only one command you can use.</p>
+        <p>
+            /msg sends a private message. It's syntax is: <code>/msg[recipents] &lt;message></code>, where <cpde>recipents</code> is a space seperated list of recipents, For example: <code>/msg[joe bob billy] &lt;message></code> sengs a message to joe, bob, and billy only. No one else can see it.
+            The <code>&lt;message></code> parameter is your message. for example: if you do <code>/msg [billy] Hello. Only you can see this.</code><br>
+            Only billy and you will be able to see the message, which is:  Hello. Only you can see this.
+        </p>
+        <h1>Markdown</h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </body>
 
 </html>
