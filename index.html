@@ -243,7 +243,7 @@
                 var id = localStorage.getItem("username")
                 var input;
                 input = jQuery("#text");
-                var message = convertToHtml(input.val() );
+                var message = convertToHtml(input.val() ).replaceAll("<p>", " ").replaceAll("</p>", " ").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
                 if (message.indexOf("/") === 0) {
                  runCommand(message);
                  $('#text').val('');
