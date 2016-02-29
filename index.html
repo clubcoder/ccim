@@ -470,10 +470,10 @@ body{
                             console.log("fail")
                         }
                     } else if (command === localStorage.getItem("username") ) {
-                        head.append('' + note + '')
+                        head.append('<div class="talk-bubble tri-right btn-left"><div class="talktext"><p> ' + note + '</p></div></div>')
                     } else {
                         //<div class="talk-bubble tri-right btm-left"> <div class="talktext"> <p>
-                        head.append('' + note + '')
+                        head.append('<div class="talk-bubble tri-right btn-right"><div class="talktext"><p>' + note + '</p></div></div>')
                     }
                     
             }
