@@ -121,13 +121,7 @@
     <script src="markdown.js"></script>
 
                      <script>
-                     $(document).ready(function(){
-        var editor = $("#text");
-        var preview = $("#preview");
-        editor.val(localStorage.getItem("post"));
-        preview.html(convertToHtml(localStorage.getItem("post")));
-        
-    });
+
                      if (window.location.hash === "#popout") {
                         $(".popout-hidden").hide()
                         $(".intro").html("CCIM")
@@ -249,7 +243,9 @@
                 var id = localStorage.getItem("username")
                 var input;
                 input = jQuery("#text");
-                var message = convertToHtml(input.val() );
+                var converter = new showdown.Converter(),
+
+                var message = converter.convertToHtml(input.val() );
                 if (message.indexOf("/") === 0) {
                  runCommand(message);
                  $('#text').val('');
