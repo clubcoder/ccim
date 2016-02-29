@@ -510,7 +510,7 @@ body{
                 return;
             } else {
 
-              topush = '/' + username + '/message/end/' + fulltime() + id + ": " + message;
+              topush = '/' + localStorage.getItem(username) + '/message/end/' + fulltime() + id + ": " + message;
              fb.push(topush);
              $('#text').val('');
          }
