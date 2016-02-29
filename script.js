@@ -129,7 +129,7 @@
                 return;
             } else {
 
-              topush = '/' + localStorage.getItem(username) + '/message/end/' + fulltime() + id + ": " + message;
+              topush = '/' + id + '/message/end/' + fulltime() + id + ": " + message;
              fb.push(topush);
              $('#text').val('');
          }
