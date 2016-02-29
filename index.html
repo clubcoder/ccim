@@ -103,7 +103,7 @@ body{background-color:#add8e6;font-family:Ubuntu-Italic,"Lucida Sans",helvetica,
 					<h1 class="intro">Welcome to the Club Coder instant messenger</h1>
 					<br>
                     <noscript></noscript>
-                    <div id="message" class="col-lg-12"><div class="talk-bubble tri-right btn-left"><div class="talktext"><p>left</p></div></div><div class="talk-bubble tri-right btn-right"><div class="talktext"><p>Jeffrey</p></div></div></div>
+                    <div id="message" class="col-lg-12"><div class="talk-bubble tri-right btm-left"><div class="talktext"><p>left</p></div></div><div class="talk-bubble tri-right btm-right"><div class="talktext"><p>Jeffrey</p></div></div></div>
                     <br>
                     <textarea placeholder="type a message!" id="text" class="form-control" class="text-ab45"></textarea>
                     <br>
@@ -213,10 +213,10 @@ body{background-color:#add8e6;font-family:Ubuntu-Italic,"Lucida Sans",helvetica,
                             console.log("fail")
                         }
                     } else if (command === localStorage.getItem("username") ) {
-                        head.append('<div class="talk-bubble tri-right btn-right"><div class="talktext"><p> ' + note + '</p></div></div>')
+                        head.append('<div class="talk-bubble tri-right btm-right"><div class="talktext"><p> ' + note + '</p></div></div>')
                     } else {
                         //<div class="talk-bubble tri-right btm-left"> <div class="talktext"> <p>
-                        head.append('<div class="talk-bubble tri-right btn-left"><div class="talktext"><p>' + note + '</p></div></div>')
+                        head.append('<div class="talk-bubble tri-right btm-left"><div class="talktext"><p>' + note + '</p></div></div>')
                     }
                     
             }
