@@ -9,8 +9,9 @@
     function testAuth() {
         var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
         var key = localStorage.getItem("key");
-                fbref.child(key).set(null)
         if (sessionStorage.getItem("auth") === "true") {
+                            fbref.child(key).set(null)
+
             fbref.authWithCustomToken(localStorage.getItem("token"), function(error, authData) {
               if (error) {
                 console.log("Login Failed!", error);
