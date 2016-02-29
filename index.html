@@ -243,9 +243,7 @@
                 var id = localStorage.getItem("username")
                 var input;
                 input = jQuery("#text");
-                var converter = new showdown.Converter();
-
-                var message = converter.convertToHtml(input.val() );
+                var message = convertToHtml(input.val() );
                 if (message.indexOf("/") === 0) {
                  runCommand(message);
                  $('#text').val('');
