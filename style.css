@@ -1,40 +1,51 @@
 #message {
 
-		height:55%;
-		overflow:scroll;
-	}
-	body {
-		background-image: url("backgrounds/28.jpg");
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center; 
+        height:55%;
+        overflow:scroll;
+    }
+    body {
+        background-image: url("backgrounds/28.jpg");
+        background-size:     cover;                      /* <------ */
+        background-repeat:   no-repeat;
+        background-position: center center; 
 
-	}
-	#message {
-		.margin-bottom:;
-		-moz-box-shadow:    inset  0  8px 4px -8px #696868, 
-		inset  0 -8px 4px -8px #696868;
-		-webkit-box-shadow: inset  0  8px 4px -8px #696868, 
-		inset  0 -8px 4px -8px #696868;
-		box-shadow:        inset  0  8px 4px -8px #696868, 
-		inset  0 -8px 4px -8px #696868;
+    }
+    #message {
+        .margin-bottom:;
+        -moz-box-shadow:    inset  0  8px 4px -8px #696868, 
+        inset  0 -8px 4px -8px #696868;
+        -webkit-box-shadow: inset  0  8px 4px -8px #696868, 
+        inset  0 -8px 4px -8px #696868;
+        box-shadow:        inset  0  8px 4px -8px #696868, 
+        inset  0 -8px 4px -8px #696868;
 
-	}
-	#message:hover {
-		-moz-box-shadow:    inset  0  8px 14px -8px #696868, 
-		inset  0 -8px 14px -8px #696868;
-		-webkit-box-shadow: inset  0  8px 14px -8px #696868, 
-		inset  0 -8px 14px -8px #696868;
-		box-shadow:        inset  0  8px 14px -8px #696868, 
-		inset  0 -8px 14px -8px #696868;
-	}
-	#message {
-		background:rgba(255,255,255,0.5);
-		border-radius: 2px
-	}
-	.intro {
-		background:rgba(255,255,255,0.1);
-	}
-	#text {
-		background:rgba(255,255,255,0.5)
-	}
+    }
+    #message:hover {
+        -moz-box-shadow:    inset  0  8px 14px -8px #696868, 
+        inset  0 -8px 14px -8px #696868;
+        -webkit-box-shadow: inset  0  8px 14px -8px #696868, 
+        inset  0 -8px 14px -8px #696868;
+        box-shadow:        inset  0  8px 14px -8px #696868, 
+        inset  0 -8px 14px -8px #696868;
+    }
+    #message {
+        background:rgba(255,255,255,0.7);
+        border-radius: 2px
+    }
+    .intro {
+        background:rgba(255,255,255,0.3);
+    }
+    #text {
+        resize:vertical;
+        background:rgba(255,255,255,0.5);
+        color:rgba(0,0,0,1);
+    }
+    .background-transparent {
+        background:rgba(255,255,255,0.5);
+    }
+    .transparent {
+        opacity:0.7;
+    }
+    .me {
+    text-decoration:bold;
+}

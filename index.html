@@ -37,57 +37,7 @@
         content="0; url=http://im.clubcoder.tk/noscript.html">
     </noscript>
     <style>
-    #message {
-
-        height:55%;
-        overflow:scroll;
-    }
-    body {
-        background-image: url("backgrounds/28.jpg");
-        background-size:     cover;                      /* <------ */
-        background-repeat:   no-repeat;
-        background-position: center center; 
-
-    }
-    #message {
-        .margin-bottom:;
-        -moz-box-shadow:    inset  0  8px 4px -8px #696868, 
-        inset  0 -8px 4px -8px #696868;
-        -webkit-box-shadow: inset  0  8px 4px -8px #696868, 
-        inset  0 -8px 4px -8px #696868;
-        box-shadow:        inset  0  8px 4px -8px #696868, 
-        inset  0 -8px 4px -8px #696868;
-
-    }
-    #message:hover {
-        -moz-box-shadow:    inset  0  8px 14px -8px #696868, 
-        inset  0 -8px 14px -8px #696868;
-        -webkit-box-shadow: inset  0  8px 14px -8px #696868, 
-        inset  0 -8px 14px -8px #696868;
-        box-shadow:        inset  0  8px 14px -8px #696868, 
-        inset  0 -8px 14px -8px #696868;
-    }
-    #message {
-        background:rgba(255,255,255,0.4);
-        border-radius: 2px
-    }
-    .intro {
-        background:rgba(255,255,255,0.3);
-    }
-    #text {
-        resize:vertical;
-        background:rgba(255,255,255,0.5);
-        color:rgba(0,0,0,1);
-    }
-    .background-transparent {
-        background:rgba(255,255,255,0.5);
-    }
-    .transparent {
-        opacity:0.7;
-    }
-    .me {
-    text-decoration:bold;
-}
+    
     </style>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -104,8 +54,7 @@
 
 					<h1 class="intro">Welcome to the Club Coder instant messenger</h1>
 					<br>
-                    <noscript></noscript>
-                    <div id="message" class="col-lg-12"><div class="talk-bubble tri-right btm-left"><div class="talktext"><p>left</p></div></div><div class="talk-bubble tri-right btm-right"><div class="talktext"><p>Jeffrey</p></div></div></div>
+                    <div id="message" class="col-lg-12"></div>
                     <br>
                     <textarea placeholder="type a message!" id="text" class="form-control" class="text-ab45"></textarea>
                     <br>
@@ -113,7 +62,7 @@
                     <div class="popout-hidden">
                         <div class="options background-transparent"><p> <a id="popout">Pop Out <i class="fa fa-external-link"></i></a>
                          | <span><a id="view-image">View Image <i class="fa fa-picture-o"></i>
-</a></span> | <a id="logout">Logout <i class="fa fa-sign-out"></i></a> | <a id="help">Help <i class="fa fa-info-circle"></i></a> | <input type="checkbox" name="autoscroll" value="true" checked>Autoscroll on new<br>
+</a></span> | <a id="logout">Logout <i class="fa fa-sign-out"></i></a> | <a id="help">Help <i class="fa fa-info-circle"></i></a> | <input type="checkbox" id="autoscroll" value="true" checked>Autoscroll on new<br>
 </p></div>
                      </div>
 
