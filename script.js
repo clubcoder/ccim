@@ -139,7 +139,7 @@ slide();
                 		return;
                 	} else {
 
-                		topush = '/' + id + '/message/end/' + fulltime() + id + ": " + message;
+                		topush = fulltime() + id + ": " + message;
                 		fb.push(topush);
                 		$('#text').val('');
                 	}
