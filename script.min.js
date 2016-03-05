@@ -93,7 +93,7 @@ function received(message) {
 			}
 		}
 	} else {
-			head.append('<p>' + note + '</p>')
+			head.append('<p>' + m + '</p>')
 			if ($('#autoscroll').prop('checked') ) {
 				$('#message').scrollTop($('#message')[0].scrollHeight)
 
