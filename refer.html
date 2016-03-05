@@ -22,6 +22,8 @@ fb.on("value", function(snapshot) {
 		sessionStorage.setItem("auth", "true")
 		localStorage.setItem("token", token)
 		window.location.href = decodeURIComponent(redirect);
+	} else {
+		console.log(false)
 	}
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
