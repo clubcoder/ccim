@@ -112,14 +112,17 @@ function runCommand(c) {
 	var id = localStorage.getItem("username");
 	var command = c.substring(c.indexOf("/") + 1, c.indexOf("["));
 	console.log(command);
+	console.log(2)
 	if (command === "msg") {
 		var recipents = c.substring(c.indexOf("/msg[") + 5, c.indexOf("]"));
 		var message = c.substring(c.indexOf("] ") + 2);
-		var topush = "/private/header/" + recipents + "/end/" + fulltime() + id + " to " + recipents.replaceAll(" ", " and ").replaceAll(" i", " I").replaceAll(" j", " J").replaceAll(" d", "D").replaceAll(" l", " L") + ": " + message;
+		var topush = "/private/header/" + recipents + "/end/" + fulltime() + id + " sent a private message to: " + recipents.replaceAll(" ", " and ").replaceAll(" i", " I").replaceAll(" j", " J").replaceAll(" d", "D").replaceAll(" l", " L") + ": " + message;
 		fb.push(topush);
 		$('#text').val('');
+		console.log(4)
 
 	}
+	console.log(10)
 
 }
 function s() {
@@ -128,7 +131,9 @@ function s() {
 	input = jQuery("#text");
 	var message = convertToHtml(input.val().replaceAll("<", "&lt;").replaceAll(">", "&gt;") ).replaceAll("<p>", " ").replaceAll("</p>", " ");
 	if (message.indexOf("/") === 0) {
+		console.log(3)
 		runCommand(message);
+		console.log(4)
 		$('#text').val('');
 	} else if (message === null || message === "" || message === " " || message === "\n") {
 		return;
