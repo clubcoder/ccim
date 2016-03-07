@@ -19,7 +19,7 @@ slide();
 function randoms() { // random
 	return Math.floor(Math.random() * 50 + 1);
 }
-$("#help").click(function(){$("#myModal").modal("show");})
+$("#help").click(function(){$("#myModal").modal("show");});
 function slide(){
 	var z = randoms();
 	$('body')
