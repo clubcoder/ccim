@@ -12,7 +12,7 @@ $("#logout").click(function(){
 	var fbref = new Firebase("https://ccim2.firebaseio.com");
 	fbref.unauth();
 	localStorage.setItem("auth", "false");
-	window.location.href = "/logout.html"; 
+	window.location.href = "logout.html"; 
 });
 $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
 slide();
