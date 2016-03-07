@@ -13,7 +13,7 @@ $("#logout").click(function(){
 	fbref.unauth();
 	localStorage.setItem("auth", "false");
 	window.location.href = "/logout.html"; 
-})
+});
 $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
 slide();
 function randoms() { // random
