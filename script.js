@@ -73,7 +73,7 @@ function popout() {
 function received(message) {
 	var head;
 	head = jQuery("#message");
-	var m = message.val()
+	var m = message.val();
 	if (m.indexOf("/") === 0) {
 		console.log("private:" + m)
 		var command = m.substring(1, m.indexOf("/header/") );
