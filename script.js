@@ -44,8 +44,8 @@ function fulltime() {
 		var h = hour.getHours();
 		var a = " A.M.";
 	}
-	if (String(7).length === 1) {
-		var m = "0" + String(7);
+	if (String(minute.getMinutes()).length === 1) {
+		var m = "0" + String(minute.getMinutes());
 	} else {
 		var m = minute.getMinutes();
 	}
