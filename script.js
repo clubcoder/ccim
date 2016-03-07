@@ -1,4 +1,4 @@
-
+"use strict";
 if (window.location.hash === "#popout") {
 	$(".popout-hidden").hide();
 	$(".intro").html("CCIM");
