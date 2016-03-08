@@ -75,7 +75,7 @@ function received(message) {
 	head = jQuery("#message");
 	var m = message.val();
 	if (m.indexOf("/") === 0) {
-		console.log("private:" + m)
+		console.log("private:" + m);
 		var command = m.substring(1, m.indexOf("/header/") );
 
 		var other = m.substring(m.indexOf("/header/") + 8, m.indexOf("/end/"));
