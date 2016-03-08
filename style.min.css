@@ -1,15 +1,1 @@
-#message{height:55%;overflow:scroll}body{background-image:url(backgrounds/28.jpg);background-size:cover;background-repeat:no-repeat;background-position:center center}#message{-moz-box-shadow:inset 0 8px 4px -8px #696868,inset 0 -8px 4px -8px #696868;-webkit-box-shadow:inset 0 8px 4px -8px #696868,inset 0 -8px 4px -8px #696868;box-shadow:inset 0 8px 4px -8px #696868,inset 0 -8px 4px -8px #696868}#message:hover{-moz-box-shadow:inset 0 8px 14px -8px #696868,inset 0 -8px 14px -8px #696868;-webkit-box-shadow:inset 0 8px 14px -8px #696868,inset 0 -8px 14px -8px #696868;box-shadow:inset 0 8px 14px -8px #696868,inset 0 -8px 14px -8px #696868}#message{background:rgba(255,255,255,0.7);border-radius:2px}.intro{background:rgba(255,255,255,0.3)}#text{resize:vertical;background:rgba(255,255,255,0.5);color:rgba(0,0,0,1)}.options{background:rgba(255,255,255,0.5)}.transparent{opacity:.7}.me{text-decoration:bold}
-.modal.modal-wide .modal-dialog {
-  width: 90%;
-}
-.modal-wide .modal-body {
-  overflow-y: auto;
-}
-
-/* irrelevant styling */
-body { text-align: center; }
-body p { 
-  max-width: 400px; 
-  margin: 20px auto; 
-}
-#tallModal .modal-body p { margin-bottom: 900px }
+.intro,.options{text-align:center}#message{height:55%;overflow:scroll;-moz-box-shadow:inset 0 8px 4px -8px #696868,inset 0 -8px 4px -8px #696868;-webkit-box-shadow:inset 0 8px 4px -8px #696868,inset 0 -8px 4px -8px #696868;box-shadow:inset 0 8px 4px -8px #696868,inset 0 -8px 4px -8px #696868;background:rgba(255,255,255,.7);border-radius:2px}body{background-image:url(backgrounds/28.jpg);background-size:cover;background-repeat:no-repeat;background-position:center center}#message:hover{-moz-box-shadow:inset 0 8px 14px -8px #696868,inset 0 -8px 14px -8px #696868;-webkit-box-shadow:inset 0 8px 14px -8px #696868,inset 0 -8px 14px -8px #696868;box-shadow:inset 0 8px 14px -8px #696868,inset 0 -8px 14px -8px #696868}.intro{background:rgba(255,255,255,.3)}#text,.options{background:rgba(255,255,255,.5)}#text{resize:vertical;color:rgba(0,0,0,1)}.transparent{opacity:.7}.me{text-decoration:bold}.modal.modal-wide .modal-dialog{width:90%}.modal-wide .modal-body{overflow-y:auto}
