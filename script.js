@@ -138,7 +138,7 @@ function runCommand(c) {
 	var id = localStorage.getItem("username");
 	var command = c.substring(c.indexOf("/") + 1, c.indexOf("["));
 	console.log(command);
-	console.log(2)
+	console.log(2);
 	if (command === "msg") {
 		var recipents = c.substring(c.indexOf("/msg[") + 5, c.indexOf("]"));
 		var message = c.substring(c.indexOf("] ") + 2);
