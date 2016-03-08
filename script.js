@@ -157,9 +157,9 @@ function s() {
 	input = jQuery("#text");
 	var message = convertToHtml(input.val().replaceAll("<", "&lt;").replaceAll(">", "&gt;") ).replaceAll("<p>", " ").replaceAll("</p>", " ");
 	if (message.indexOf("/") === 0) {
-		console.log(3)
+		console.log(3);
 		runCommand(message);
-		console.log(4)
+		console.log(4);
 		$('#text').val('');
 	} else if (message === null || message === "" || message === " " || message === "\n") {
 		return;
