@@ -165,7 +165,7 @@ function s() {
 		return;
 	} else {
 
-		topush = fulltime() + id + ": " + message;
+		var topush = fulltime() + id + ": " + message;
 		fb.push(topush);
 		$('#text').val('');
 	}
