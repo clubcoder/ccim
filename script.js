@@ -155,7 +155,9 @@ function s() {
 	var id = localStorage.getItem("username");
 	var input;
 	input = jQuery("#text");
+	console.log(message);
 	var message = convertToHtml(input.val().replaceAll("<", "&lt;").replaceAll(">", "&gt;") ).replaceAll("<p>", " ").replaceAll("</p>", " ");
+	console.log(message);
 	if (message.indexOf("/") === 0) {
 		console.log(3);
 		runCommand(message);
