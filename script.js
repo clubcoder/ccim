@@ -167,7 +167,7 @@ function s() {
 	} else if (message === null || message === "" || message === " " || message === "\n") {
 		return;
 	} else {
-		console.log("normal")
+		console.log("normal");
 		var topush = fulltime() + id + ": " + message;
 		fb.push(topush);
 		$('#text').val('');
