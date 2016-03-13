@@ -156,7 +156,7 @@ function s() {
 	var input;
 	input = jQuery("#text");
 	//
-	console.log(message);
+	console.log(input.val());
 	var message = convertToHtml(input.val().replaceAll("<", "&lt;").replaceAll(">", "&gt;") ).replaceAll("<p>", " ").replaceAll("</p>", " ");
 	console.log(message);
 	if (message.indexOf("/") === 0) {
@@ -167,7 +167,7 @@ function s() {
 	} else if (message === null || message === "" || message === " " || message === "\n") {
 		return;
 	} else {
-
+		console.log("normal")
 		var topush = fulltime() + id + ": " + message;
 		fb.push(topush);
 		$('#text').val('');
