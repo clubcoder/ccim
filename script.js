@@ -158,8 +158,9 @@ function s() {
 	//
 	console.log(input.val());
 	var message = convertToHtml(input.val().replaceAll("<", "&lt;").replaceAll(">", "&gt;") ).replaceAll("<p>", " ").replaceAll("</p>", " ");
+
 	console.log(message);
-	if (message.indexOf("/") === 0) {
+	if (message.indexOf("/") === 0 || message.indexOf(" /") === 0) {
 		console.log(3);
 		runCommand(message);
 		console.log(4);
