@@ -1,4 +1,5 @@
-"use strict";
+
+	"use strict";
 // bug testing
 if (window.location.hash === "#popout") {
 	$(".popout-hidden").hide();
@@ -142,7 +143,7 @@ function runCommand(c) {
 	if (command === "msg") {
 		var recipents = c.substring(c.indexOf("/msg[") + 5, c.indexOf("]"));
 		var message = c.substring(c.indexOf("] ") + 2);
-		var topush = "/private/header/" + recipents + "/end/" + fulltime() + id + " sent a private message to: " + recipents.replaceAll(" ", " and ").replaceAll(" i", " I").replaceAll(" j", " J").replaceAll(" d", "D").replaceAll(" l", " L") + ": " + message;
+		var topush = "/private/header/" + recipents + "/end/" + fulltime() + "Private message from " + id + " to " + recipents.replaceAll(" ", " and ").replaceAll(" i", " I").replaceAll(" j", " J").replaceAll(" d", "D").replaceAll(" l", " L").replaceAll(localStorage.getItem("username")) + ": " + message;
 		fb.push(topush);
 		$('#text').val('');
 		console.log(4)
