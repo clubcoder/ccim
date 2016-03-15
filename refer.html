@@ -61,7 +61,7 @@ fb.on("value", function(snapshot) {
 		console.log(sessionKey)
 		sessionStorage.setItem("sessionKey", sessionKey)
 		sessionRef.child(sessionKey).set(username)
-		// window.location.href = decodeURIComponent(redirect);
+		window.location.href = decodeURIComponent(redirect);
 	} else {
 		console.log(false)
 	}
