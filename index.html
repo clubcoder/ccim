@@ -10,7 +10,7 @@
         var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
         var fb = new Firebase("https://ccim2.firebaseio.com/sessions/")
         var key = localStorage.getItem("key");
-        var sessionKey = localStorage.getItem("sessionKey")
+        var sessionKey = sessionStorage.getItem("sessionKey")
         fb.once("value", function(snapshot) {
           if (sessionStorage.getItem("auth") === "true" && snapchot.child(sessionKey).val() === localStorage.getItem("username") ){
             fbref.child(key).set(null)
