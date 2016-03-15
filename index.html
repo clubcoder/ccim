@@ -12,7 +12,7 @@
         var key = localStorage.getItem("key");
         var sessionKey = localStorage.getItem("sessionKey")
         fb.once("value", function(snapshot) {
-          if (sessionStorage.getItem("auth") === "true" && snapchot.child(sessionKey).val() === localStorage.getItem("username") {
+          if (sessionStorage.getItem("auth") === "true" && snapchot.child(sessionKey).val() === localStorage.getItem("username") ){
             fbref.child(key).set(null)
 
             fbref.authWithCustomToken(localStorage.getItem("token"), function(error, authData) {
