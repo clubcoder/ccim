@@ -12,7 +12,9 @@ if (window.location.hash === "#popout") {
 $("#logout").click(function(){
 	var fbref = new Firebase("https://ccim2.firebaseio.com");
 	fbref.unauth();
+	sessionStorage.setItem("sessionKey", "false")
 	localStorage.setItem("auth", "false");
+	sessionStorage.setItem("auth", "false");
 	window.location.href = "logout.html"; 
 });
 $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});
@@ -24,11 +26,11 @@ $("#help").click(function(){$("#myModal").modal("show");});
 function slide(){
 	var z = randoms();
 	$('body')
-	.css('background-image','url("'+ 'http://im.clubcoder.tk/backgrounds/' + z + '.jpg' +'")')
+	.css('background-image','url("'+ '/backgrounds/' + z + '.jpg' +'")')
 	.fadeIn(300000,function(){
 		setTimeout(slide,300000);
 	});
-	$("#view-image").attr("href", 'http://im.clubcoder.tk/backgrounds/' + z + '.jpg');
+	$("#view-image").attr("href", '/backgrounds/' + z + '.jpg');
 }
 var fb = new Firebase("https://ccim2.firebaseio.com/messages/");
 var doc = jQuery(document);
@@ -85,7 +87,7 @@ function received(message) {
 		if (command === "after") {
 			$('#message').scrollTop($('#message')[0].scrollHeight);
 		} else if (command === "private"){
-			if (note.indexOf(localStorage.getItem("username")) > -1 ) {
+			if (note.toLowerCase().indexOf(localStorage.getItem("username").toLowerCase()) > -1 ) {
 				head.append("<p>" + note + "</p>");
 				if ($('#autoscroll').prop('checked') ) {
 					$('#message').scrollTop($('#message')[0].scrollHeight);

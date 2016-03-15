@@ -4,6 +4,13 @@ function getQuery(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var c=new R
 if (window.location.search === "?" || window.location.search === null || window.location.search === "") {
 	window.location.href = "404.html"
 }
+function keyGen() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 15; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+}
 console.log(1)
 var redirect = getQuery("continue");
 var username = getQuery("username");
@@ -12,6 +19,7 @@ var email = getQuery("email")
 var token = getQuery("token")
 console.log(2)
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
+var sessionRef = new Firebase("https://ccim2.firebaseio.com/sessions/")
 fb.on("value", function(snapshot) {
 	console.log(3)
 	if (snapshot.child(key).val() === username && username !== "placeholder" && key !== "true") {
@@ -21,6 +29,9 @@ fb.on("value", function(snapshot) {
 		localStorage.setItem("email", email);
 		sessionStorage.setItem("auth", "true")
 		localStorage.setItem("token", token)
+		var sessionKey = keyGen()
+		sessionStorage.setItem("sessionKey", sessionkey)
+		sessionRef.child(sessionKey).set(username)
 		window.location.href = decodeURIComponent(redirect);
 	} else {
 		console.log(false)

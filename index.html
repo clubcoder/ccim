@@ -8,9 +8,12 @@
     <script>
     function testAuth() {
         var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
+        var fb = new Firebase("https://ccim2.firebaseio.com/sessions/")
         var key = localStorage.getItem("key");
-        if (sessionStorage.getItem("auth") === "true") {
-                            fbref.child(key).set(null)
+        var sessionKey = localStorage.getItem("sessionKey")
+        fb.once("value", function(snapshot) {
+          if (sessionStorage.getItem("auth") === "true" && snapchot.child(sessionKey).val() === localStorage.getItem("username") {
+            fbref.child(key).set(null)
 
             fbref.authWithCustomToken(localStorage.getItem("token"), function(error, authData) {
               if (error) {
@@ -23,6 +26,8 @@
         } else {
             return false;
         }
+        });
+        
     }
     if (!testAuth()) {
         window.location.href = "login.html";
@@ -54,7 +59,7 @@
 					<br>
 
 					<h1 class="intro">Welcome to the Club Coder instant messenger</h1>
-					<br>                              <p class="options popout-hidden">Version 2.1.5</p>
+					<br>                              <p class="options popout-hidden">Version 2.2.1</p>
 
                     <div id="message" class="col-lg-12"></div>
 
@@ -100,8 +105,7 @@
             Only billy and you will be able to see the message, which is:  Hello. Only you can see this.
         </p>
         <h4>Markdown</h4>
-<iframe src="http://tinyurl.com/gmoyrvk
-" class="modal-wide" style="width:90%;height:1000px;">Loading</iframe>
+<iframe src="http://tinyurl.com/jcjj75s" class="modal-wide" style="width:95%;height:1000px;">Loading</iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
