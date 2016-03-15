@@ -52,9 +52,10 @@ fb.on("value", function(snapshot) {
 		sessionStorage.setItem("auth", "true")
 		localStorage.setItem("token", token)
 		var sessionKey = keyGen()
+		console.log(sessionKey)
 		sessionStorage.setItem("sessionKey", sessionKey)
 		sessionRef.child(sessionKey).set(username)
-		window.location.href = decodeURIComponent(redirect);
+		// window.location.href = decodeURIComponent(redirect);
 	} else {
 		console.log(false)
 	}
