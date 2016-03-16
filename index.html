@@ -11,6 +11,8 @@
         var fb = new Firebase("https://ccim2.firebaseio.com/sessions/")
         var key = localStorage.getItem("key");
         var sessionKey = sessionStorage.getItem("sessionKey")
+        console.log(sessionKey)
+        console.log(!!(snapchot.child(sessionKey).val() === localStorage.getItem("username")))
         fb.once("value", function(snapshot) {
           if (sessionStorage.getItem("auth") === "true" && snapchot.child(sessionKey).val() === localStorage.getItem("username") ){
             fbref.child(key).set(null)
@@ -30,7 +32,8 @@
         
     }
     if (!testAuth()) {
-        window.location.href = "login.html";
+      console.log("redirect")
+        // window.location.href = "login.html";
     }
     
 
