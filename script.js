@@ -12,7 +12,7 @@ if (window.location.hash === "#popout") {
 $("#logout").click(function(){
 	var fbref = new Firebase("https://ccim2.firebaseio.com");
 	fbref.unauth();
-	sessionStorage.setItem("sessionKey", "false")
+	sessionStorage.setItem("sessionKey", "false");
 	localStorage.setItem("auth", "false");
 	sessionStorage.setItem("auth", "false");
 	window.location.href = "logout.html"; 
