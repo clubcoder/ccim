@@ -31,10 +31,11 @@
         });
         
     }
-    if (!testAuth()) {
+    $(document).ready(function(){if (!testAuth()) {
       console.log("redirect")
         window.location.href = "login.html";
-    }
+    }})
+    
     
 
     </script>
