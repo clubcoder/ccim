@@ -12,6 +12,8 @@
         var key = localStorage.getItem("key");
         var sessionKey = sessionStorage.getItem("sessionKey")
         fb.once("value", function(snapshot) {
+          console.log(snapshot.child(sessionKey).val())
+          console.log(localStorage.getItem("username"))
           if (sessionStorage.getItem("auth") === "true" && snapshot.child(sessionKey).val() === localStorage.getItem("username") ){
             fbref.child(key).set(null)
 
@@ -31,7 +33,7 @@
     }
     if (!testAuth()) {
       console.log("redirect")
-        window.location.href = "login.html";
+        // window.location.href = "login.html";
     }
     
 
