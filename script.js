@@ -1,5 +1,6 @@
 
 	"use strict";
+$()
 // bug testing
 if (window.location.hash === "#popout") {
 	$(".popout-hidden").hide();
