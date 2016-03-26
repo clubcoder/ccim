@@ -16,6 +16,7 @@ $("#logout").click(function(){
 	sessionStorage.setItem("sessionKey", "false");
 	localStorage.setItem("auth", "false");
 	sessionStorage.setItem("auth", "false");
+	localStorage.setItem("reload", "false")
 	window.location.href = "logout.html"; 
 });
 $(document).ready(function(){$('#message').scrollTop($('#message')[0].scrollHeight);});

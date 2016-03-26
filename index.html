@@ -22,6 +22,12 @@
                 console.log("Login Failed!", error);
               } else {
                 console.log("Login Succeeded!", authData);
+                if (localStorage.getItem("reload") === "false") {
+                  localStorage.setItem("reload", "true")
+                  window.location.reload()
+                } else {
+
+                }
               }
             });
             return true;
@@ -80,16 +86,16 @@
         </p></div></div>
       </div>
         <!-- end of Loader -->
-	<div class="container">
+  <div class="container">
 
 
-		<div class="row">
-			<div class="box">
-				<div class="col-lg-12">
-					<br>
+    <div class="row">
+      <div class="box">
+        <div class="col-lg-12">
+          <br>
 
-					<h1 class="intro">Welcome to the Club Coder instant messenger</h1>
-					<br>                              <p class="options popout-hidden">Version 2.2.1</p>
+          <h1 class="intro">Welcome to the Club Coder instant messenger</h1>
+          <br>                              <p class="options popout-hidden">Version 2.2.1</p>
 
                     <div id="message" class="col-lg-12"></div>
 
