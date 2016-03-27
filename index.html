@@ -20,14 +20,10 @@
             fbref.authWithCustomToken(localStorage.getItem("token"), function(error, authData) {
               if (error) {
                 console.log("Login Failed!", error);
+                return false;
               } else {
                 console.log("Login Succeeded!", authData);
-                if (localStorage.getItem("reload") === "false") {
-                  localStorage.setItem("reload", "true")
-                  window.location.reload()
-                } else {
-
-                }
+                return true;
               }
             });
             return true;
