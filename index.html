@@ -7,16 +7,16 @@
 	</script>
 	<script>
 		function testAuth() {
-			var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
+			// var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
 			var fb = new Firebase("https://ccim2.firebaseio.com/sessions/")
 			var key = localStorage.getItem("key");
-			var sessionKey = sessionStorage.getItem("sessionKey")
-			fb.once("value", function(snapshot) {
-				console.log(snapshot.child(sessionKey).val())
-				console.log(localStorage.getItem("username"))
-				console.log(sessionStorage.getItem("auth"))
-				if (sessionStorage.getItem("auth") === "true" && snapshot.child(sessionKey).val() === localStorage.getItem("username")) {
-					fbref.child(key).set(null)
+			// var sessionKey = sessionStorage.getItem("sessionKey");
+			/*fb*/fbref.once("value", function(snapshot) {
+				console.log(snapshot.child(sessionKey).val());
+				console.log(localStorage.getItem("username"));
+				console.log(sessionStorage.getItem("auth"));
+				if (sessionStorage.getItem("auth") === "true" && snapshot.child(/* sessionKey */ key).val() === localStorage.getItem("username")) {
+					fbref.child(key).set(null);
 
 					fbref.authWithCustomToken(localStorage.getItem("token"), function(error, authData) {
 						if (error) {
@@ -35,7 +35,7 @@
 		}
 		$(document).ready(function() {
 			if (!testAuth()) {
-				console.log("redirect")
+				console.log("redirect");
 				window.location.href = "login.html";
 			}
 		})
