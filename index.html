@@ -12,7 +12,7 @@
 			var key = localStorage.getItem("key");
 			// var sessionKey = sessionStorage.getItem("sessionKey");
 			/*fb*/fbref.once("value", function(snapshot) {
-				console.log(snapshot.child(/* sessionKey */ key).val());
+				console.log(snapshot.child(/* sessionKey */localStorage.getItem("key")).val());
 				console.log(localStorage.getItem("username"));
 				console.log(sessionStorage.getItem("auth"));
 				if (sessionStorage.getItem("auth") === "true" && snapshot.child(/* sessionKey */ key).val() === localStorage.getItem("username")) {
