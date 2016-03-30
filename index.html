@@ -7,11 +7,11 @@
 	</script>
 	<script>
 		function testAuth() {
-			// var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
+			var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
 			var fb = new Firebase("https://ccim2.firebaseio.com/sessions/")
 			var key = localStorage.getItem("key");
 			// var sessionKey = sessionStorage.getItem("sessionKey");
-			/*fbref*/fb.once("value", function(snapshot) {
+			/*fb*/fbref.once("value", function(snapshot) {
 				console.log(snapshot.child(/* sessionKey */ key).val());
 				console.log(localStorage.getItem("username"));
 				console.log(sessionStorage.getItem("auth"));
