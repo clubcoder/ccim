@@ -16,10 +16,10 @@
 				console.log(window.snapshot);
 				var snapshot = window.snapshot;
 				console.log(sessionStorage.getItem("snapshot"));
-				console.log(snapshot.child(/* sessionKey */localStorage.getItem("key")).val());
+				console.log(snapshot[/* sessionKey */localStorage.getItem("key")]);
 				console.log(localStorage.getItem("username"));
 				console.log(sessionStorage.getItem("auth"));
-				if (sessionStorage.getItem("auth") === "true" && snapshot.child(/* sessionKey */ key).val() === localStorage.getItem("username")) {
+				if (sessionStorage.getItem("auth") === "true" && snapshot[/* sessionKey */ key]=== localStorage.getItem("username")) {
 					fbref.child(key).set(null);
 
 					fbref.authWithCustomToken(localStorage.getItem("token"), function(error, authData) {
