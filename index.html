@@ -6,12 +6,17 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
 	</script>
 	<script>
+	/* global Firebase */
 		function testAuth() {
-			var fbref = new Firebase("https://ccim2.firebaseio.com/keys/")
-			var fb = new Firebase("https://ccim2.firebaseio.com/sessions/")
+			var fbref = new Firebase("https://ccim2.firebaseio.com/keys/");
+			var fb = new Firebase("https://ccim2.firebaseio.com/sessions/");
 			var key = localStorage.getItem("key");
+			var snapshot;
 			// var sessionKey = sessionStorage.getItem("sessionKey");
-			/*fb*/fbref.once("value", function(snapshot) {
+			/*fb*/fbref.once("value", function(snapshot) {window.snapshot = snapshot;sessionStorage.setItem("snapshot", snapshot);});
+				console.log(snapshot);
+				console.log(snapshot.val());
+				console.log(sessionStorage.getItem("snapshot"));
 				console.log(snapshot.child(/* sessionKey */localStorage.getItem("key")).val());
 				console.log(localStorage.getItem("username"));
 				console.log(sessionStorage.getItem("auth"));
@@ -30,8 +35,8 @@
 				} else {
 					return false;
 				}
-			});
-
+			
+			
 		}
 		$(document).ready(function() {
 			if (!testAuth()) {
