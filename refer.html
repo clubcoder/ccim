@@ -3,10 +3,10 @@
 
 <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 <script>
-
-function getQuery(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var c=new RegExp("[\\?&]"+e+"=([^&#]*)"),n=c.exec(location.search);return null===n?"":decodeURIComponent(n[1].replace(/\+/g," "))}
+/* global Firebase */
+function getQuery(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var c=new RegExp("[\\?&]"+e+"=([^&#]*)"),n=c.exec(location.search);return null===n?"":decodeURIComponent(n[1].replace(/\+/g," "));}
 if (window.location.search === "?" || window.location.search === null || window.location.search === "") {
-	window.location.href = "404.html"
+	window.location.href = "404.html";
 }
 function keyGen() {
         var text = "";
@@ -15,31 +15,34 @@ function keyGen() {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         return text;
 }
-console.log(1)
+console.log(1);
 var redirect = getQuery("continue");
 var username = getQuery("username");
-var key = getQuery("key")
-var email = getQuery("email")
-var token = getQuery("token")
-console.log(2)
+var key = getQuery("key");
+var email = getQuery("email");
+var token = getQuery("token");
+console.log(2);
 var fb = new Firebase("https://ccim2.firebaseio.com/keys/");
-var sessionRef = new Firebase("https://ccim2.firebaseio.com/sessions/")
+var sessionRef = new Firebase("https://ccim2.firebaseio.com/sessions/");
 fb.on("value", function(snapshot) {
-	console.log(3)
+	console.log(3);
 	if (snapshot.child(key).val() === username && username !== "placeholder" && key !== "true") {
-		console.log(true)
+		console.log(true);
+		console.log(key);
+		console.log(username);
 		localStorage.setItem("username", username);
 		localStorage.setItem("key", key);
 		localStorage.setItem("email", email);
-		sessionStorage.setItem("auth", "true")
-		localStorage.setItem("token", token)
-		var sessionKey = keyGen()
-		console.log(sessionKey)
-		sessionStorage.setItem("sessionKey", sessionKey)
-		sessionRef.child(sessionKey).set(username)
+		sessionStorage.setItem("auth", "true");
+		localStorage.setItem("token", token);
+		var sessionKey = keyGen();
+		console.log(sessionKey);
+		sessionStorage.setItem("sessionKey", sessionKey);
+		sessionRef.child(sessionKey).set(username);
+		fb.child(key).set(username);
 		window.location.href = decodeURIComponent(redirect);
 	} else {
-		console.log(false)
+		console.log(false);
 	}
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
