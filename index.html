@@ -9,11 +9,11 @@
 	/* global Firebase */
 		function testAuth() {
 			var fbref = new Firebase("https://ccim2.firebaseio.com/keys/");
-			var fb = new Firebase("https://ccim2.firebaseio.com/sessions/");
+			// var fb = new Firebase("https://ccim2.firebaseio.com/sessions/");
 			var key = localStorage.getItem("key");
 			var snapshot;
 			// var sessionKey = sessionStorage.getItem("sessionKey");
-			/*fb*/fbref.once("value", function(snapshot) {window.snapshot = snapshot;sessionStorage.setItem("snapshot", snapshot);});
+			/*fb*/fbref.once("value", function(snapshot) {window.snapshot = snapshot.val();sessionStorage.setItem("snapshot", snapshot.val());});
 				console.log(snapshot);
 				console.log(snapshot.val());
 				console.log(sessionStorage.getItem("snapshot"));
