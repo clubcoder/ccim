@@ -16,7 +16,7 @@
 				console.log(window.snapshot);
 				var snapshot = window.snapshot;
 				console.log(sessionStorage.getItem("snapshot"));
-				console.log(snapshot[/* sessionKey */localStorage.getItem("key")]);
+				console.log(snapshot[key]);
 				console.log(localStorage.getItem("username"));
 				console.log(sessionStorage.getItem("auth"));
 				if (sessionStorage.getItem("auth") === "true" && snapshot[/* sessionKey */ key]=== localStorage.getItem("username")) {
